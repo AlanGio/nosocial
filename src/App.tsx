@@ -8,12 +8,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <CssBaseline />
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ height: '100%' }}>
         <Box
           sx={{
             border: '1px solid #ccc',
             padding: 2,
-            backgroundColor: 'rgba(255, 255, 255, 0.9)'
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            height: '100%'
           }}
         >
           <Home />

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Grid2 as Grid,
@@ -9,78 +10,155 @@ import {
 import Rocky from '../assets/images/rocky.png';
 import Foxy from '../assets/images/foxy.png';
 
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import TextsmsIcon from '@mui/icons-material/Textsms';
+import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
+
 const Home = () => {
   return (
     <Box>
       <Grid container spacing={4}>
-        <Grid size={9}>
+        <Grid size={{ xs: 12, md: 10 }}>
           <Box
             sx={{
               display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'stretch',
-              gap: 1
+              flexDirection: 'column',
+              gap: 1,
+              p: 3,
+              border: '1px solid #ccc',
+              borderRadius: 2,
+              mb: 1
             }}
           >
-            <TextField
-              id="outlined-multiline-flexible"
-              label="What do you want to day today?"
-              multiline
-              maxRows={4}
-              sx={{ flexGrow: 20 }}
-            />
-            <Button
-              variant="contained"
-              size="large"
-              color="primary"
-              sx={{ flexGrow: 1 }}
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'stretch'
+              }}
             >
-              Post it
-            </Button>
+              <TextField
+                id="outlined-multiline-flexible"
+                label="What do you want to day today?"
+                multiline
+                maxRows={4}
+                sx={{ flexGrow: 20 }}
+              />
+              <Button
+                variant="contained"
+                size="large"
+                color="primary"
+                sx={{ flexGrow: 1 }}
+              >
+                Post it
+              </Button>
+            </Box>
+
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 1
+              }}
+            >
+              <TextsmsIcon />
+              <AddPhotoAlternateIcon />
+              <VideoCameraBackIcon />
+            </Box>
           </Box>
 
-          <Typography variant="h6" sx={{ pt: 2 }}>
-            {new Date().toDateString()}
+          <Typography variant="h6" sx={{ p: 2 }}>
+            Today: {new Date().toDateString()}
           </Typography>
 
-          <Grid container spacing={4}>
-            <Grid size={8}>
-              <Box>
-                We all like to dream about the future and all of the
-                possibilities and potential it holds. While setting goals and
-                pushing forward to achieve them is a crucial component of
-                creating the future you envision for yourself, it’s all too easy
-                to become fixated on what can be, instead of what is. Becoming
-                so focused on the future that you can’t appreciate what you
-                already have in the present is a dangerous mindset to be in. For
-                tomorrow, next month, and next year are never promised. We must
-                learn how to dream for tomorrow while still enjoying what today
-                has to offer us, which is certainly easier said than done. A few
-                simple steps to walk through as you learn to embrace today’s
-                happiness: Step 1: Come to terms with what happiness is not
-                Happiness is not: a new car a trip to the Bahamas a six figure
-                income a huge house with a wrap-around porch
+          <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
+            <Grid size={{ xs: 12, md: 8 }}>
+              <Box
+                sx={{
+                  p: 2,
+                  borderTop: '1px solid #ccc',
+                  borderBottom: '1px solid #ccc',
+                  height: '100%'
+                }}
+              >
+                I'm really tired today, my job search is going badly, I'm a bit
+                frustrated about it. However, I'm trying to make the most of the
+                situation that I have a lot of free time to do my own project.
+                Something is something...
               </Box>
             </Grid>
-            <Grid size={4}>
-              <img src={Foxy} alt="placeholder" width="100%" />
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Box
+                sx={{
+                  p: 2,
+                  position: 'relative',
+                  border: '1px solid #ccc',
+                  borderRadius: 2,
+                  display: 'flex',
+                  gap: 3,
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    left: [60, -20],
+                    top: [-15, 26],
+                    width: 0,
+                    height: 0,
+                    borderTop: [
+                      '15px solid transparent',
+                      '10px solid transparent'
+                    ],
+                    borderRight: ['20px solid #ccc', '20px solid #ccc'],
+                    borderBottom: [
+                      '0px solid transparent',
+                      '10px solid transparent'
+                    ]
+                  }
+                }}
+              >
+                <Avatar
+                  alt="Foxy"
+                  src={Foxy}
+                  sx={{ width: 80, height: 80, border: '4px solid #ccc' }}
+                />
+
+                <Typography variant="subtitle2">
+                  Hey, good luck with that search. I can imagine how frustrating
+                  it can be. Have you tried those new remote search sites like
+                  Proxify and Arc? Maybe they can help you. That's great about
+                  your personal project! Would you like to write a little more
+                  about it? Maybe it will help you to externalize and look for
+                  new ideas. I promise to try to help!
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
         </Grid>
         <Grid
-          size={3}
+          size={{ xs: 12, md: 2 }}
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            backgroundColor: '#f9f9f9',
+            p: 2
           }}
         >
-          <img src={Rocky} alt="placeholder" width="100%" />
           <Typography variant="h5">Alan</Typography>
-          <Typography variant="body1" sx={{ textAlign: 'center' }}>
+          <Box
+            sx={{
+              width: '100%',
+              overflow: 'hidden',
+              p: 2,
+              border: '1px solid #ccc',
+              borderRadius: 2
+            }}
+          >
+            <img src={Rocky} alt="placeholder" width="100%" />
+          </Box>
+          <Typography variant="body2" sx={{ textAlign: 'center' }}>
             German Sheppard lover. I love to play fetch and go for long walks.
             Musician, I play the guitar and the piano. I love to play fetch and
             go for long walks.

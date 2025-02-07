@@ -23,10 +23,11 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: #ffffff;
-  background-image: url('/src/assets/images/background.png');
-  background-position: center;
-  background-size: cover;
+  background-color: #f3f3f3;
+  background-image: radial-gradient(#5781f7 0.9px, transparent 0.9px),
+    radial-gradient(#f77045 0.9px, #f3f3f3 0.9px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
   height: 100%;
 }
 
