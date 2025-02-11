@@ -13,8 +13,11 @@ import Foxy from '../assets/images/foxy.png';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import TextsmsIcon from '@mui/icons-material/Textsms';
 import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
+import { useGetPosts } from '../api/posts';
 
 const Home = () => {
+  const { data, loading, error } = useGetPosts();
+  console.log(data, loading, error, 'lala');
   return (
     <Box>
       <Grid container spacing={4}>
